@@ -1,135 +1,151 @@
 ---
 layout: post
-title: "Producer-Consumer model"
-subtitle: "KFC vs McDonald's "
+title: "Design Patterns (1)"
+subtitle: "Design patterns basic "
 author: "Bing Yan"
 header-img: "img/deadlock/post-bg-java.jpg"
 header-mask: 0.2
 catalog: true
 tags:
   - Java
+  - Design Patterns
   - Learning
 ---
 ## 前言
-相信多数人都进过肯德基和麦当劳消费，笔者进店消费的时候发现他们的点单流程和并发模型十分接近。虽然每家店的流程有所差异，但是大概就只有两种模型。在肯德基里，你点单之后点单员会把所点的食物完成封装之后拿来你面前，然后让你结账，有时候有些耗时操作没完成就会留下一个餐台号稍后送来。而在麦当劳的点餐模型大致是，你点完快餐之后要求你立即付款，付完款之后下一位点餐，而取餐的是在旁边等待，另一个服务员专责负责配餐。
-
-KFC：<br/>
-![](/img/producer/KFC.png)
-
-McDonald's：<br/>
-![](/img/producer/McDonald.png)
-
-在并发模型中，肯德基比较倾向于一个线程把所有的服务都做完，而麦当劳倾向于服务解耦，让他们更专注于自己的业务。而肯德基的模型与BIO服务器的模型设计类似，麦当劳的模型则与生产者消费者模型十分相似。<br/>
-<br/>
-而在大型电商网站中，他们的服务或者应用解耦之后，是通过消息队列在彼此间通信的。消息队列和应用之间的架构关系就是生产者消费者模型。
+刚接触编码的时候，相信很多人和我一样，早早就听了设计模式的大名，但是却对这个存在表示不能理解甚至不屑一顾。
+“不懂”为什么要把很简单的东西搞得那么复杂。只有随着软件开发经验的增加，也许才能明白我所看到的“复杂”恰恰就是设计模式的精髓所在，之前所理解的“简单”就是一把钥匙开一把锁的模式，目的仅仅是着眼于解决现在的问题，而设计模式的“复杂”就在于它是要构造一个“万能钥匙”，目的是提出一种对所有锁的开锁方案。
 
 ## 正文
-### 生产者消费者模型(Producer-Consumer model)
+### 什么是设计模式(Design Patterns)
 
-生产者消费者模型具体来讲，就是在一个系统中，存在生产者和消费者两种角色，他们通过内存缓冲区进行通信，生产者生产消费者需要的资料，消费者把资料做成产品。生产消费者模式如下图: 
+设计模式是在软件工程实践过程中，程序员们总结出的良好的编程方法。<br/>
+设计模式其实也是一种软件设计的整体思路。就是要把一些东西抽象出来再通过一定的方式重新整理，从而达到合理优化。
 
-![](/img/producer/model.png)
+### 为什么要学习设计模式
+使用设计模式能够增加系统的健壮性，易修改性和可扩展性，当你进行开发的软件规模比较大的时候，良好的设计模式会给编程带来便利，让系统更加稳定，这些在自己编写小程序的时候是体现不出来的。<br/>
+现在大多数框架都使用了很多设计模式，正是因为有了这些设计模式，才能让程序更好的工作，例如烟水晶框架的单例模式，struts的mvc模式，java类库中iterator的迭代器模式等等，都是设计模式良好的应用。
 
-在日益发展的服务类型中，譬如注册用户这种服务，它可能解耦成好几种独立的服务（账号验证，邮箱验证码，手机短信码等）。它们作为消费者，等待用户输入数据，在前台数据提交之后会经过分解并发送到各个服务所在的url，分发的那个角色就相当于生产者。消费者在获取数据时候有可能一次不能处理完，那么它们各自有一个请求队列，那就是内存缓冲区了。做这项工作的框架叫做消息队列。
+### 设计原则[参考1](#Reference-1)
+#### 单一职责原则(Single Responsibility Principle)
+**定义:**
+一个类只负责一个功能领域的职责；换句话说，就一个类而言，应该只有一个引起它变化的原因。
+例子：
+*   职责扩散是单一职责的挑战，应在其扩散到不可控制之前进行代码重构。
+*   只有在逻辑足够简单或者方法数量足够少，才能够违反单一职责
+*   单一职责的优点主要是：降低类的复杂度，提高类的可读性和可维护性。
 
-### 生产者消费者模型的实现
-**5种实现方法**
+**例子:**
+重构前:<br/>
+![](/img/design/单一原则1.png)
+重构后:<br/>
+![](/img/design/单一原则2.png)
+#### 开闭原则(Open-Closed Principle)
+**定义:**
+软件实体应该对扩展开放，对修改关闭。
 
-*   用synchronized对存储加锁，然后用object原生的wait() 和 notify()做同步
-*   用concurrent.locks.Lock，然后用condition的await() 和signal()做同步
-*   直接使用concurrent.BlockingQueue
-*   使用PipedInputStream/PipedOutputStream
-*   使用信号量semaphore
+**注意:**
+*   抽象化设计是开闭原则的关键：用抽象类构架框架，用实现扩展细节。
+*   其它原则和设计模式的整体概括，该原则是主要目标。
 
+**例子:**
+重构前:<br/>
+![](/img/design/开闭原则1.png)
+重构后:<br/>
+![](/img/design/开闭原则2.png)
 
-**synchronized实现方法代码**
+*   先前使用type作为显示图类型的判断因子，如果新增一种图，则需要修改ChartDisplay类，违反了向修改封闭的原则。
+*   重新构建一个抽象类AbstractChart类，所有图像显示都需继承实现抽象类，如果有新的显示类只需要扩展一个新类，而不需要修改ChartDisplay类，符合向扩展开放的原则。
+*   这个重构同时也符合依赖倒置的原则，使客户端程序不需要依赖具体实现，而是依赖抽象。
+*   但是这个重构需要客户端知道所有显示图像类。
 
-作为学习之初，这个实现方法比较容易理解。<br/>
-对于其他几种方法，也通过查找资料进行了一定的了解。<br/>
-这里重在通过模型实现理解生产者消费者模型的原理。
+#### 里氏代换原则(Liskov Substitution Principle)
+**定义:**
+所有引用基类(父类)的地方必需能够透明地使用子类对象。
+**注意:**
+*   将一个基类替换成其子类，程序不会产生任何错误和异常；反之则不成立。
+*   里氏代换原则要求不能破坏继承体系，具体表现在：
+    **  子类应该实现父类的所有抽象方法，不要覆盖父类的非抽象方法。
+    **  子类可以增加自己特有的方法。
+    **  当子类的方法重载父类的方法时，方法的前置条件（即方法的形参）要比父类方法的输入参数更宽松。
+    **  当子类的方法实现父类的抽象方法时，方法的后置条件（即方法的返回值）要比父类更严格。
+    
+**例子:**
+重构前:<br/>
+![](/img/design/里氏代换1.png)
+重构后:<br/>
+![](/img/design/里氏代换2.png)
 
-```
-import java.util.LinkedList;
-import java.util.Queue;
+*   重构前，有大量的代码重复，如果增加新的用户，则需要维护EmailSender。
+*   重构后，利用里氏替换原则，能够使用Customer基类的地方，都可以替换为其子类，方便扩展。
 
-public class ProducerAndConsumer {
-    private final int MAX_LEN = 10;
-    private Queue<Integer> queue = new LinkedList<Integer>();
-    class Producer extends Thread {
-        @Override
-        public void run() {
-            producer();
-        }
-        private void producer() {
-            while(true) {
-                synchronized (queue) {
-                    while (queue.size() == MAX_LEN) {
-                        queue.notify();
-                        System.out.println("当前队列满");
-                        try {
-                            queue.wait();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    queue.add(1);
-                    queue.notify();
-                    System.out.println("生产者生产一条任务，当前队列长度为" + queue.size());
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-    }
-    class Consumer extends Thread {
-        @Override
-        public void run() {
-            consumer();
-        }
-        private void consumer() {
-            while (true) {
-                synchronized (queue) {
-                    while (queue.size() == 0) {
-                        queue.notify();
-                        System.out.println("当前队列为空");
-                        try {
-                            queue.wait();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    queue.poll();
-                    queue.notify();
-                    System.out.println("消费者消费一条任务，当前队列长度为" + queue.size());
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-    }
-    public static void main(String[] args) {
-        ProducerAndConsumer pc = new ProducerAndConsumer();
-        Producer producer = pc.new Producer();
-        Consumer consumer = pc.new Consumer();
-        producer.start();
-        consumer.start();
-    }
-}
-```
+#### 依赖倒置原则(Dependency Inversion Principle)
+**定义:**
+抽象不依赖于细节，细节依赖于抽象，针对接口编程。
+**注意:**
+*   在程序代码中传递参数或者关联关系式，尽量引用高层的抽象层类。即：使用接口和抽象类进行变量生命、参数类型生命、方法返回类型生命以及数据类型的转换。
+*   当一个对象和其它对象有依赖关系时，可以利用依赖注入的方法将类之间进行解耦。主要有三种：构造注入，Set方法和接口注入。
+*   上述三个原则之间的关系：开闭是原则，里氏是基础，依赖倒置是手段。
+**例子:**
+重构前:<br/>
+![](/img/design/依赖倒置1.png)
+重构后:<br/>
+![](/img/design/依赖倒置2.png)
+
+*   重构前如果需要更改不同的DataConvertor就需要更改CustomerDAO的源码。
+*   重构后可以直接利用配置文件指定哪个类，并不需要修改代码。
+
+#### 接口隔离原则(Interface Segregation Principle)
+**定义:**
+使用多个专门的接口，而不是使用功能复杂的单一接口。
+**注意:**
+*   控制接口的粒度，接口不能太小，如果太小会导致系统中接口泛滥，不利于维护；接口也不能太大，太大的接口将违背接口隔离原则，灵活性较差，使用起来很不方便。
+**例子:**
+重构前:<br/>
+![](/img/design/接口隔离1.png)
+重构后:<br/>
+![](/img/design/接口隔离2.png)
+
+#### 合成复用原则(Composite Resuse Principle)
+**定义:**
+又称为组合/聚合复用原则(Composition/Aggregate Reuse Pinciple)，尽量使用对象组合，而不是继承来达到复用的目的。
+**注意:**
+*   组合/聚合可以降低类之间的耦合度，并且不会暴漏类的具体实现细节，称为“黑箱复用”；如果是使用继承机型复用，则会将实现细节暴漏给子类，破会系统的封闭性，如果基类变化，子类也随之变化，不具有灵活性，称为“白箱复用”。
+*   一般来说，如果两个类之间是"Has-A"关系，则使用组合/聚合；如果是"Is-A"关系，则使用继承。
+**例子:**
+重构前:<br/>
+![](/img/design/合成复用1.png)
+重构后:<br/>
+![](/img/design/合成复用2.png)
+
+#### 迪米特法则
+**定义:**
+一个软件实体应当尽可能少地与其它实体发生相互作用。
+**注意:**
+*   可以直接相互的作用包括：
+    **  当前对象本身，this
+    **  以参数形式传入到当前对象方法中的对象
+    **  当前对象的成员对象
+    **  如果当前对象的成员对象是一个集合，那么集合中的元素也都可以直接访问
+    **  当前对象创建的对象
+*   如果其它对象有相互耦合的情况，尽量采用第三者来降低耦合。
+**例子:**
+重构前:<br/>
+![](/img/design/迪米特1.png)
+重构后:<br/>
+![](/img/design/迪米特2.png)
+
+*   重构前各个实体相互作用关系复杂，不利于项目维护。
+*   重构后将所有实体的操作和调用信息都交由Mediator进行中转，利于软件功能扩展和维护
 
 ## 总结
-生产者消费者模式 为信息传输开辟了一个崭新的概念，因为它的优先级最高，所以即使网络发生堵塞时它也会最先通过，最大程度的保证了设备的安全。<br/>
-也有缺点，就是在网络中的个数是有限制的。<br/>
-生产者消费者模式在设置时比较简单，使用方便安全，在将来的自动化行业必定会大大被人们所认同。<br/>
-生产者消费者模式，其实只要保证在存储端同一时刻只有一个线程读或写就不会有问题，然后再去考虑线程同步。<br/>
-方法1、2、5都比较类似，都是加锁来限制同一时刻只能有一个读或写。<br/>
-而方法3、4其实是在存储内部去保证读和写的唯一的，最低层肯定还是通过锁机制来实现的，java底层代码都封装好了而已。<br/>
 
-对于此模型的其他几种实现方法，可以参考如下内容：<br/>
-https://juejin.im/entry/596343686fb9a06bbd6f888c
+设计模式代表了最佳的实践，通常被有经验的面向对象的软件开发人员所采用。<br/>
+设计模式是软件开发人员在软件开发过程中面临的一般问题的解决方案。<br/> 
+这些解决方案是众多软件开发人员经过相当长的一段时间的试验和错误总结出来的。<br/> 
+本次学习了解了设计模式的概念，意义和设计原则，对之后针对具体设计模式学习打下了基础。<br/>
+不过在没有足够代码积累的时候，看这些设计原则还很是“照本宣科”，想要真正融会贯通，还需要依靠更多的开发经验。
+
+## Reference-1
+此次学习主要依赖于下面技术网站:<br/> 
+https://legacy.gitbook.com/book/quanke/design-pattern-java/details <br/>
+http://www.cnblogs.com/xingyukun/archive/2007/10/20/931331.html
