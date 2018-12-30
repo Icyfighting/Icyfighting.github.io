@@ -1,6 +1,7 @@
 ﻿
 
 > A little rookie just taking off.
+
 > I believe I can fly！
 
 Hi, I am Bing Yan. I have been a telecommunication customer support engineer for 6 years.
