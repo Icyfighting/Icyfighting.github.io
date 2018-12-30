@@ -42,6 +42,7 @@ tags:
 <br/>
 重构前:<br/>
 ![](/img/design/单一原则1.png)
+<br/>
 重构后:<br/>
 ![](/img/design/单一原则2.png)
 <br/>
@@ -63,6 +64,7 @@ tags:
 <br/>
 重构前:<br/>
 ![](/img/design/开闭原则1.png)
+<br/>
 重构后:<br/>
 ![](/img/design/开闭原则2.png)
 <br/>
@@ -91,6 +93,7 @@ tags:
 <br/>
 重构前:<br/>
 ![](/img/design/里氏代换1.png)
+<br/>
 重构后:<br/>
 ![](/img/design/里氏代换2.png)
 
@@ -114,6 +117,7 @@ tags:
 <br/>
 重构前:<br/>
 ![](/img/design/依赖倒置1.png)
+<br/>
 重构后:<br/>
 ![](/img/design/依赖倒置2.png)
 
@@ -135,6 +139,7 @@ tags:
 <br/>
 重构前:<br/>
 ![](/img/design/接口隔离1.png)
+<br/>
 重构后:<br/>
 ![](/img/design/接口隔离2.png)
 
@@ -156,6 +161,7 @@ tags:
 <br/>
 重构前:<br/>
 ![](/img/design/合成复用1.png)
+<br/>
 重构后:<br/>
 ![](/img/design/合成复用2.png)
 
@@ -182,6 +188,7 @@ tags:
 <br/>
 重构前:<br/>
 ![](/img/design/迪米特1.png)
+<br/>
 重构后:<br/>
 ![](/img/design/迪米特2.png)
 <br/>
