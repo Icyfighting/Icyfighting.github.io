@@ -1,10 +1,16 @@
-﻿> 码农界刚起飞的一只小菜鸟，  
-> 努力扑腾翅膀也能飞起来。
+﻿
 
-Hey，我是闫冰，从事了6年的通信售后工作，转战做了一枚程序员。
+> A little rookie just taking off.
 
-近期目标是找到新的职业开始机会。
+> I believe I can fly！
 
-长期目标是能够成长为一名不被时代所淘汰的优秀软件工程师。
+Hi, I am Bing Yan. I have been a telecommunication customer support engineer for 6 years.
+After learning Java & Python & Big Data, I want to be a programmer.
 
-👉 戳 [Github](https://github.com/Icyfighting)
+Recent goals：Find a new career start opportunity.
+
+Long-term goals：Grow into an excellent software engineer who is not eliminated by the times.
+
+👉 Click [Github](https://github.com/Icyfighting)
+
+
