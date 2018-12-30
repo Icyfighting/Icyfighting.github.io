@@ -13,20 +13,24 @@ future: true
 
 # SNS settings
 RSS: false
+weibo_username:     Icyfighting
+zhihu_username:     Icyfighting
 github_username:    Icyfighting
+twitter_username:   Icyfighting
 #linkedin_username:  firstname-lastname-idxxxx
 
 
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-highlighter: pygments
+highlighter: rouge
 permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
 #timezone: CN  
+
 
 
 
@@ -55,11 +59,10 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: Icyfighting
+disqus_username: hux
 
 # Netease settings
 netease_comment: false
-
 
 
 # Analytics settings
@@ -67,8 +70,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: bingyan.me
+#ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+#ga_domain: huangxuan.me
 
 
 
