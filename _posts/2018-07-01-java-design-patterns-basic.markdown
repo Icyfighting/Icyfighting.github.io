@@ -96,6 +96,7 @@ tags:
 <br/>
 重构后:<br/>
 ![](/img/design/里氏代换2.png)
+<br/>
 
 *   重构前，有大量的代码重复，如果增加新的用户，则需要维护EmailSender。
 *   重构后，利用里氏替换原则，能够使用Customer基类的地方，都可以替换为其子类，方便扩展。
@@ -120,6 +121,7 @@ tags:
 <br/>
 重构后:<br/>
 ![](/img/design/依赖倒置2.png)
+<br/>
 
 *   重构前如果需要更改不同的DataConvertor就需要更改CustomerDAO的源码。
 *   重构后可以直接利用配置文件指定哪个类，并不需要修改代码。
@@ -135,13 +137,14 @@ tags:
 <br/>
 
 **例子:**
-
 <br/>
 重构前:<br/>
 ![](/img/design/接口隔离1.png)
 <br/>
 重构后:<br/>
 ![](/img/design/接口隔离2.png)
+<br/>
+
 
 #### 合成复用原则(Composite Resuse Principle)
 **定义:**
@@ -157,13 +160,14 @@ tags:
 <br/>
 
 **例子:**
-
 <br/>
 重构前:<br/>
 ![](/img/design/合成复用1.png)
 <br/>
 重构后:<br/>
 ![](/img/design/合成复用2.png)
+<br/>
+
 
 #### 迪米特法则
 **定义:**
@@ -184,7 +188,6 @@ tags:
 <br/>
 
 **例子:**
-
 <br/>
 重构前:<br/>
 ![](/img/design/迪米特1.png)
@@ -192,6 +195,7 @@ tags:
 重构后:<br/>
 ![](/img/design/迪米特2.png)
 <br/>
+
 *   重构前各个实体相互作用关系复杂，不利于项目维护。
 *   重构后将所有实体的操作和调用信息都交由Mediator进行中转，利于软件功能扩展和维护
 
