@@ -1,10 +1,11 @@
----
+﻿---
 layout: post
 title: "Java memory management learning (2)"
 subtitle: "Garbage collection & GC algorithm "
 author: "Bing Yan"
 header-img: "img/java-mem-2/post-bg-java.jpg"
 header-mask: 0.2
+catalog: true
 tags:
   - Java
   - GC
