@@ -5,6 +5,7 @@ subtitle: "Stack & Heap & Method Area"
 author: "Bing Yan"
 header-img: "img/java-mem/post-bg-java.jpg"
 header-mask: 0.2
+catalog: true
 tags:
   - Java
   - Learning
