@@ -10,47 +10,48 @@ tags:
   - Python
   - Learning
 ---
-## Ç°ÑÔ
 
-&ensp;&ensp;&ensp;&ensp;¶ÔÓÚÔªÀàÓÐÒ»¸öÍ¨Ë×Ò×¶®ÓÖÆÄ¾ßìøÒâµÄ±ÈÓ÷£º<br/>
-µÀÉúÒ»£¬Ò»Éú¶þ£¬¶þÉúÈý£¬ÈýÉúÍòÎï<br/>
+## å‰è¨€
+
+&ensp;&ensp;&ensp;&ensp;å¯¹äºŽå…ƒç±»æœ‰ä¸€ä¸ªé€šä¿—æ˜“æ‡‚åˆé¢‡å…·ç¦…æ„çš„æ¯”å–»ï¼š<br/>
+é“ç”Ÿä¸€ï¼Œä¸€ç”ŸäºŒï¼ŒäºŒç”Ÿä¸‰ï¼Œä¸‰ç”Ÿä¸‡ç‰©<br/>
 
 ![](/img/metaclass/dao.jpg)
 <br/>
 
-*   µÀ ¼´ÊÇ type
-*   Ò» ¼´ÊÇ metaclass(ÔªÀà£¬»òÕß½ÐÀàÉú³ÉÆ÷)
-*   ¶þ ¼´ÊÇ class(Àà£¬»òÕß½ÐÊµÀýÉú³ÉÆ÷)
-*   Èý ¼´ÊÇ instance(ÊµÀý)
-*   ÍòÎï ¼´ÊÇ ÊµÀýµÄ¸÷ÖÖÊôÐÔÓë·½·¨£¬ÎÒÃÇÆ½³£Ê¹ÓÃpythonÊ±£¬µ÷ÓÃµÄ¾ÍÊÇËüÃÇ¡£
+*   é“ å³æ˜¯ type
+*   ä¸€ å³æ˜¯ metaclass(å…ƒç±»ï¼Œæˆ–è€…å«ç±»ç”Ÿæˆå™¨)
+*   äºŒ å³æ˜¯ class(ç±»ï¼Œæˆ–è€…å«å®žä¾‹ç”Ÿæˆå™¨)
+*   ä¸‰ å³æ˜¯ instance(å®žä¾‹)
+*   ä¸‡ç‰© å³æ˜¯ å®žä¾‹çš„å„ç§å±žæ€§ä¸Žæ–¹æ³•ï¼Œæˆ‘ä»¬å¹³å¸¸ä½¿ç”¨pythonæ—¶ï¼Œè°ƒç”¨çš„å°±æ˜¯å®ƒä»¬ã€‚
 
-¡°Ò»¡±¾ÍÊÇ½ñÌìÒªÑ§Ï°µÄÖØµã--ÔªÀà(Meta Class)¡£
+â€œä¸€â€å°±æ˜¯ä»Šå¤©è¦å­¦ä¹ çš„é‡ç‚¹--å…ƒç±»(Meta Class)ã€‚
 
-## ÕýÎÄ
-### Ê²Ã´ÊÇÔªÀà(Meta Class)
+## æ­£æ–‡
+### ä»€ä¹ˆæ˜¯å…ƒç±»(Meta Class)
 
-&ensp;&ensp;&ensp;&ensp;¼òµ¥µÄ½²£¬ÔªÀà´´½¨ÁËPythonÖÐËùÓÐµÄ¶ÔÏó¡£<br/>
-&ensp;&ensp;&ensp;&ensp;ÎÒÃÇËµPythonÊÇÒ»ÖÖ¶¯Ì¬ÓïÑÔ£¬¶ø¶¯Ì¬ÓïÑÔºÍ¾²Ì¬ÓïÑÔ×î´óµÄ²»Í¬£¬¾ÍÊÇº¯ÊýºÍÀà²»ÊÇ±àÒëÊ±¶¨ÒåµÄ£¬¶øÊÇÔËÐÐÊ±¶¯Ì¬´´½¨µÄ¡£<br/>
-&ensp;&ensp;&ensp;&ensp;classµÄ¶¨ÒåÊÇÔËÐÐÊ±¶¯Ì¬´´½¨µÄ£¬¶ø´´½¨classµÄ·½·¨¾ÍÊÇÊ¹ÓÃtype()º¯Êý¡£<br/>
-&ensp;&ensp;&ensp;&ensp;Í¨¹ýtype()º¯Êý´´½¨µÄÀàºÍÖ±½ÓÐ´classÊÇÍêÈ«Ò»ÑùµÄ£¬ÒòÎªPython½âÊÍÆ÷Óöµ½class¶¨ÒåÊ±£¬½ö½öÊÇÉ¨ÃèÒ»ÏÂclass¶¨ÒåµÄÓï·¨£¬È»ºóµ÷ÓÃtype()º¯Êý´´½¨³öclass¡£<br/>
-&ensp;&ensp;&ensp;&ensp;³ýÁËÊ¹ÓÃtype()¶¯Ì¬´´½¨ÀàÒÔÍâ£¬Òª¿ØÖÆÀàµÄ´´½¨ÐÐÎª£¬»¹¿ÉÒÔÊ¹ÓÃmetaclass£¬Ö±ÒëÎªÔªÀà¡£<br/>
-&ensp;&ensp;&ensp;&ensp;µ±ÎÒÃÇ¶¨ÒåÁËÀàÒÔºó£¬¾Í¿ÉÒÔ¸ù¾ÝÕâ¸öÀà´´½¨³öÊµÀý£¬ËùÒÔ£ºÏÈ¶¨ÒåÀà£¬È»ºó´´½¨ÊµÀý¡£µ«ÊÇÈç¹ûÎÒÃÇÏë´´½¨³öÀàÄØ£¿ÄÇ¾Í±ØÐë¸ù¾Ýmetaclass´´½¨³öÀà£¬ËùÒÔ£ºÏÈ¶¨Òåmetaclass£¬È»ºó´´½¨Àà¡£ËùÒÔ£¬metaclassÔÊÐíÄã´´½¨Àà»òÕßÐÞ¸ÄÀà¡£»»¾ä»°Ëµ£¬Äã¿ÉÒÔ°ÑÀà¿´³ÉÊÇmetaclass´´½¨³öÀ´µÄ¡°ÊµÀý¡±¡£
+&ensp;&ensp;&ensp;&ensp;ç®€å•çš„è®²ï¼Œå…ƒç±»åˆ›å»ºäº†Pythonä¸­æ‰€æœ‰çš„å¯¹è±¡ã€‚<br/>
+&ensp;&ensp;&ensp;&ensp;æˆ‘ä»¬è¯´Pythonæ˜¯ä¸€ç§åŠ¨æ€è¯­è¨€ï¼Œè€ŒåŠ¨æ€è¯­è¨€å’Œé™æ€è¯­è¨€æœ€å¤§çš„ä¸åŒï¼Œå°±æ˜¯å‡½æ•°å’Œç±»ä¸æ˜¯ç¼–è¯‘æ—¶å®šä¹‰çš„ï¼Œè€Œæ˜¯è¿è¡Œæ—¶åŠ¨æ€åˆ›å»ºçš„ã€‚<br/>
+&ensp;&ensp;&ensp;&ensp;classçš„å®šä¹‰æ˜¯è¿è¡Œæ—¶åŠ¨æ€åˆ›å»ºçš„ï¼Œè€Œåˆ›å»ºclassçš„æ–¹æ³•å°±æ˜¯ä½¿ç”¨type()å‡½æ•°ã€‚<br/>
+&ensp;&ensp;&ensp;&ensp;é€šè¿‡type()å‡½æ•°åˆ›å»ºçš„ç±»å’Œç›´æŽ¥å†™classæ˜¯å®Œå…¨ä¸€æ ·çš„ï¼Œå› ä¸ºPythonè§£é‡Šå™¨é‡åˆ°classå®šä¹‰æ—¶ï¼Œä»…ä»…æ˜¯æ‰«æä¸€ä¸‹classå®šä¹‰çš„è¯­æ³•ï¼Œç„¶åŽè°ƒç”¨type()å‡½æ•°åˆ›å»ºå‡ºclassã€‚<br/>
+&ensp;&ensp;&ensp;&ensp;é™¤äº†ä½¿ç”¨type()åŠ¨æ€åˆ›å»ºç±»ä»¥å¤–ï¼Œè¦æŽ§åˆ¶ç±»çš„åˆ›å»ºè¡Œä¸ºï¼Œè¿˜å¯ä»¥ä½¿ç”¨metaclassï¼Œç›´è¯‘ä¸ºå…ƒç±»ã€‚<br/>
+&ensp;&ensp;&ensp;&ensp;å½“æˆ‘ä»¬å®šä¹‰äº†ç±»ä»¥åŽï¼Œå°±å¯ä»¥æ ¹æ®è¿™ä¸ªç±»åˆ›å»ºå‡ºå®žä¾‹ï¼Œæ‰€ä»¥ï¼šå…ˆå®šä¹‰ç±»ï¼Œç„¶åŽåˆ›å»ºå®žä¾‹ã€‚ä½†æ˜¯å¦‚æžœæˆ‘ä»¬æƒ³åˆ›å»ºå‡ºç±»å‘¢ï¼Ÿé‚£å°±å¿…é¡»æ ¹æ®metaclassåˆ›å»ºå‡ºç±»ï¼Œæ‰€ä»¥ï¼šå…ˆå®šä¹‰metaclassï¼Œç„¶åŽåˆ›å»ºç±»ã€‚æ‰€ä»¥ï¼Œmetaclasså…è®¸ä½ åˆ›å»ºç±»æˆ–è€…ä¿®æ”¹ç±»ã€‚æ¢å¥è¯è¯´ï¼Œä½ å¯ä»¥æŠŠç±»çœ‹æˆæ˜¯metaclassåˆ›å»ºå‡ºæ¥çš„â€œå®žä¾‹â€ã€‚
 <br/>
 
-### ¶¯Ì¬´´½¨Àà
+### åŠ¨æ€åˆ›å»ºç±»
 
-ÏÂÃæÀ´¾ÙÀý¼¯¼¸ÖÖÀàµÄ´´½¨·½Ê½
+ä¸‹é¢æ¥ä¸¾ä¾‹é›†å‡ ç§ç±»çš„åˆ›å»ºæ–¹å¼
 <br/>
 
-*   º¯Êý´´½¨
-*   type()´´½¨
+*   å‡½æ•°åˆ›å»º
+*   type()åˆ›å»º
 
-**º¯Êý´´½¨:**
+**å‡½æ•°åˆ›å»º:**
 
 ```
 def create_animal(type):
     if type == 'Dog':
-        # ´´½¨Àà
+        # åˆ›å»ºç±»
         class Dog(object):
             pass
  
@@ -69,18 +70,18 @@ print(type(dog))
 
 ```
 <br/>
-Êä³ö½á¹û£º<br/>
+è¾“å‡ºç»“æžœï¼š<br/>
 
 ```
-<class 'type'>#ÀàÀàÐÍ <br/>
-<class '__main__.create_animal.<locals>.Dog'>#¶ÔÏóÀàÐÍ
+<class 'type'>#ç±»ç±»åž‹ <br/>
+<class '__main__.create_animal.<locals>.Dog'>#å¯¹è±¡ç±»åž‹
 ```
 <br/>
 
-ÕâÀïÍ¨¹ýµ÷ÓÃº¯Êý´«Í¼²»Í¬µÄ²ÎÊý£¬À´´´½¨²»Í¬µÄÀà£¬´´½¨³ö·µ»ØµÄÊÇÀàµÄÒýÓÃ£¬²¢²»ÊÇ¶ÔÏó£¬ÎÒÃÇ¿ÉÒÔÍ¨¹ý·µ»ØµÄÀàÀ´´´½¨¶ÔÏó¡£
+è¿™é‡Œé€šè¿‡è°ƒç”¨å‡½æ•°ä¼ å›¾ä¸åŒçš„å‚æ•°ï¼Œæ¥åˆ›å»ºä¸åŒçš„ç±»ï¼Œåˆ›å»ºå‡ºè¿”å›žçš„æ˜¯ç±»çš„å¼•ç”¨ï¼Œå¹¶ä¸æ˜¯å¯¹è±¡ï¼Œæˆ‘ä»¬å¯ä»¥é€šè¿‡è¿”å›žçš„ç±»æ¥åˆ›å»ºå¯¹è±¡ã€‚
 <br/>
 
-**type()´´½¨:**
+**type()åˆ›å»º:**
 
 ```
 class Test1(object):
@@ -92,32 +93,32 @@ Test2 = type("Test2", (object,), {})
 print(type(Test1))
 print(type(Test2))
 ```
-Êä³ö½á¹û£º
+è¾“å‡ºç»“æžœï¼š
 <br/>
 ```
 <class 'type'>
 <class 'type'>
 ```
 
-¿ÉÒÔ¿´³öÁ½ÖÖ´´½¨·½Ê½ÊÇÏàÍ¬µÄÐ§¹û£¬Ëµµ½ÕâÀïÎÒÃÇ´ó¼ÒÓ¦¸Ã¶¼Ã÷°×ÁË£¬Ô­À´type¾ÍÊÇ´´½¨ÀàµÄÒ»¸ö·½·¨£¬pythonÓÃËüÀ´´´½¨Àà£¬Ò²¾ÍÊÇËµËûÊÇËùÓÐÀàµÄÔªÀà£¬ÀýÈçÔÚpyhtonÖÐÊÇ²»ÊÇ»¹ÓÐint£¬str...µÈµÈÀàÐÍ£¬int¾ÍÊÇÓÃÀ´´´½¨ÕûÊýµÄÀà£¬¶østr¾ÍÊÇÓÃÀ´´´½¨×Ö·û´®µÄÀà£¬ÕâÀïµÄtypeÒ²ÊÇ£¬Ëû¾ÍÊÇpythonÓÃÀ´´´½¨ÀàµÄÀà£¨ÔªÀà£©¡£
+å¯ä»¥çœ‹å‡ºä¸¤ç§åˆ›å»ºæ–¹å¼æ˜¯ç›¸åŒçš„æ•ˆæžœï¼Œè¯´åˆ°è¿™é‡Œæˆ‘ä»¬å¤§å®¶åº”è¯¥éƒ½æ˜Žç™½äº†ï¼ŒåŽŸæ¥typeå°±æ˜¯åˆ›å»ºç±»çš„ä¸€ä¸ªæ–¹æ³•ï¼Œpythonç”¨å®ƒæ¥åˆ›å»ºç±»ï¼Œä¹Ÿå°±æ˜¯è¯´ä»–æ˜¯æ‰€æœ‰ç±»çš„å…ƒç±»ï¼Œä¾‹å¦‚åœ¨pyhtonä¸­æ˜¯ä¸æ˜¯è¿˜æœ‰intï¼Œstr...ç­‰ç­‰ç±»åž‹ï¼Œintå°±æ˜¯ç”¨æ¥åˆ›å»ºæ•´æ•°çš„ç±»ï¼Œè€Œstrå°±æ˜¯ç”¨æ¥åˆ›å»ºå­—ç¬¦ä¸²çš„ç±»ï¼Œè¿™é‡Œçš„typeä¹Ÿæ˜¯ï¼Œä»–å°±æ˜¯pythonç”¨æ¥åˆ›å»ºç±»çš„ç±»ï¼ˆå…ƒç±»ï¼‰ã€‚
 
 <br/>
 
 
-### ×Ô¶¨ÒåÔªÀà
+### è‡ªå®šä¹‰å…ƒç±»
 
-×Ô¶¨ÒåÀàµÄµÄÄ¿µÄ£¬¾ÍÊÇÀ¹½ØÀàµÄ´´½¨£¬È»ºóÐÞ¸ÄÒ»Ð©ÌØÐÔ£¬È»ºó·µ»Ø¸ÃÀà¡£¸Ð¾õÊÇ×°ÊÎÆ÷¸ÉµÄÊÂÇé£¬Ö»ÊÇ×°ÊÎÆ÷ÊÇÐÞÊÎÒ»¸öº¯Êý£¬Í¬ÑùÊÇÒ»¸ö¶«Î÷½øÈ¥£¬È»ºó±»¶îÍâ¼ÓÁËÒ»Ð©¶«Î÷£¬×îºó±»·µ»Ø¡£
+è‡ªå®šä¹‰ç±»çš„çš„ç›®çš„ï¼Œå°±æ˜¯æ‹¦æˆªç±»çš„åˆ›å»ºï¼Œç„¶åŽä¿®æ”¹ä¸€äº›ç‰¹æ€§ï¼Œç„¶åŽè¿”å›žè¯¥ç±»ã€‚æ„Ÿè§‰æ˜¯è£…é¥°å™¨å¹²çš„äº‹æƒ…ï¼Œåªæ˜¯è£…é¥°å™¨æ˜¯ä¿®é¥°ä¸€ä¸ªå‡½æ•°ï¼ŒåŒæ ·æ˜¯ä¸€ä¸ªä¸œè¥¿è¿›åŽ»ï¼Œç„¶åŽè¢«é¢å¤–åŠ äº†ä¸€äº›ä¸œè¥¿ï¼Œæœ€åŽè¢«è¿”å›žã€‚
 
 ```
 def upper_attr(class_name, class_parents, class_attr):
     """
-    ·µ»ØÒ»¸ö¶ÔÏó,½«ÊôÐÔ¶¼¸ÄÎª´óÐ´µÄÐÎÊ½
-    :param class_name:  ÀàµÄÃû³Æ
-    :param class_parents: ÀàµÄ¸¸Ààtuple
-    :param class_attr: ÀàµÄ²ÎÊý
-    :return: ·µ»ØÀà
+    è¿”å›žä¸€ä¸ªå¯¹è±¡,å°†å±žæ€§éƒ½æ”¹ä¸ºå¤§å†™çš„å½¢å¼
+    :param class_name:  ç±»çš„åç§°
+    :param class_parents: ç±»çš„çˆ¶ç±»tuple
+    :param class_attr: ç±»çš„å‚æ•°
+    :return: è¿”å›žç±»
     """
-    # Éú³ÉÁËÒ»¸ögenerator
+    # ç”Ÿæˆäº†ä¸€ä¸ªgenerator
     attrs = ((name, value) for name, value in class_attr.items() if not name.startswith('__'))
     uppercase_attrs = dict((name.upper(), value) for name, value in attrs)
     return type(class_name, class_parents, uppercase_attrs)
@@ -130,17 +131,17 @@ print hasattr(pw, 'BAR')
 print pw.BAR
 ```
 
-Êä³ö½á¹û£º<br/>
+è¾“å‡ºç»“æžœï¼š<br/>
 >False<br/>
 True
 
-¿ÉÒÔ´ÓÉÏÃæ¿´µ½£¬ÊµÏÖÁËÒ»¸öÔªÀà(metaclass)£¬ È»ºóÖ¸¶¨ÁËÄ£¿éÊ¹ÓÃÕâ¸öÔªÀàÀ´´´½¨Àà£¬ËùÒÔµ±ÏÂÃæÊ¹ÓÃtype½øÐÐÀà´´½¨µÄÊ±ºò£¬¿ÉÒÔ·¢ÏÖÐ¡Ð´µÄbar²ÎÊý±»Ìæ»»³ÉÁË´óÐ´µÄBAR²ÎÊý£¬²¢ÇÒÔÚ×îºóµ÷ÓÃÁËÕâ¸öÀàÊôÐÔ²¢£¬´òÓ¡ÁËËü¡£<br/>
+å¯ä»¥ä»Žä¸Šé¢çœ‹åˆ°ï¼Œå®žçŽ°äº†ä¸€ä¸ªå…ƒç±»(metaclass)ï¼Œ ç„¶åŽæŒ‡å®šäº†æ¨¡å—ä½¿ç”¨è¿™ä¸ªå…ƒç±»æ¥åˆ›å»ºç±»ï¼Œæ‰€ä»¥å½“ä¸‹é¢ä½¿ç”¨typeè¿›è¡Œç±»åˆ›å»ºçš„æ—¶å€™ï¼Œå¯ä»¥å‘çŽ°å°å†™çš„barå‚æ•°è¢«æ›¿æ¢æˆäº†å¤§å†™çš„BARå‚æ•°ï¼Œå¹¶ä¸”åœ¨æœ€åŽè°ƒç”¨äº†è¿™ä¸ªç±»å±žæ€§å¹¶ï¼Œæ‰“å°äº†å®ƒã€‚<br/>
 
-## ×Ü½á
-&ensp;&ensp;&ensp;&ensp;ÀàÆäÊµÊÇÄÜ¹»´´½¨³öÀàÊµÀýµÄ¶ÔÏó¡£ºÃ°É£¬ÊÂÊµÉÏ£¬Àà±¾ÉíÒ²ÊÇÊµÀý£¬µ±È»£¬ËüÃÇÊÇÔªÀàµÄÊµÀý¡£<br/>
-&ensp;&ensp;&ensp;&ensp;PythonÖÐµÄÒ»ÇÐ¶¼ÊÇ¶ÔÏó£¬ËüÃÇÒªÃ´ÊÇÀàµÄÊµÀý£¬ÒªÃ´ÊÇÔªÀàµÄÊµÀý£¬³ýÁËtype¡£typeÊµ¼ÊÉÏÊÇËü×Ô¼ºµÄÔªÀà£¬ÔÚ´¿Python»·¾³ÖÐÕâ¿É²»ÊÇÄãÄÜ¹»×öµ½µÄ£¬ÕâÊÇÍ¨¹ýÔÚÊµÏÖ²ãÃæË£Ò»Ð©Ð¡ÊÖ¶Î×öµ½µÄ¡£Æä´Î£¬ÔªÀàÊÇºÜ¸´ÔÓµÄ¡£¶ÔÓÚ·Ç³£¼òµ¥µÄÀà£¬Äã¿ÉÄÜ²»Ï£ÍûÍ¨¹ýÊ¹ÓÃÔªÀàÀ´¶ÔÀà×öÐÞ¸Ä¡£
+## æ€»ç»“
+&ensp;&ensp;&ensp;&ensp;ç±»å…¶å®žæ˜¯èƒ½å¤Ÿåˆ›å»ºå‡ºç±»å®žä¾‹çš„å¯¹è±¡ã€‚å¥½å§ï¼Œäº‹å®žä¸Šï¼Œç±»æœ¬èº«ä¹Ÿæ˜¯å®žä¾‹ï¼Œå½“ç„¶ï¼Œå®ƒä»¬æ˜¯å…ƒç±»çš„å®žä¾‹ã€‚<br/>
+&ensp;&ensp;&ensp;&ensp;Pythonä¸­çš„ä¸€åˆ‡éƒ½æ˜¯å¯¹è±¡ï¼Œå®ƒä»¬è¦ä¹ˆæ˜¯ç±»çš„å®žä¾‹ï¼Œè¦ä¹ˆæ˜¯å…ƒç±»çš„å®žä¾‹ï¼Œé™¤äº†typeã€‚typeå®žé™…ä¸Šæ˜¯å®ƒè‡ªå·±çš„å…ƒç±»ï¼Œåœ¨çº¯PythonçŽ¯å¢ƒä¸­è¿™å¯ä¸æ˜¯ä½ èƒ½å¤Ÿåšåˆ°çš„ï¼Œè¿™æ˜¯é€šè¿‡åœ¨å®žçŽ°å±‚é¢è€ä¸€äº›å°æ‰‹æ®µåšåˆ°çš„ã€‚å…¶æ¬¡ï¼Œå…ƒç±»æ˜¯å¾ˆå¤æ‚çš„ã€‚å¯¹äºŽéžå¸¸ç®€å•çš„ç±»ï¼Œä½ å¯èƒ½ä¸å¸Œæœ›é€šè¿‡ä½¿ç”¨å…ƒç±»æ¥å¯¹ç±»åšä¿®æ”¹ã€‚
 
-## ²Î¿¼×ÊÁÏ
-´Ë´ÎÑ§Ï°Ö÷ÒªÒÀÀµÓÚÏÂÃæ¼¼ÊõÍøÕ¾:<br/> 
+## å‚è€ƒèµ„æ–™
+æ­¤æ¬¡å­¦ä¹ ä¸»è¦ä¾èµ–äºŽä¸‹é¢æŠ€æœ¯ç½‘ç«™:<br/> 
 https://stackoverflow.com/questions/100003/what-are-metaclasses-in-python <br/>
 http://blog.jobbole.com/21351/ <br/>
