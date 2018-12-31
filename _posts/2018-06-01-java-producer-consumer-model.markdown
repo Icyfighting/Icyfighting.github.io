@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Producer-Consumer model"
 subtitle: "KFC vs McDonald's "
