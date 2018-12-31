@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     Icyfighting
-zhihu_username:     Icyfighting
+#weibo_username:     Icyfighting
+#zhihu_username:     Icyfighting
 github_username:    Icyfighting
-twitter_username:   Icyfighting
+#twitter_username:   Icyfighting
 #linkedin_username:  firstname-lastname-idxxxx
 
 
