@@ -1,9 +1,9 @@
----
+﻿---
 layout: post
 title: "Design Patterns (2)"
 subtitle: "Design patterns -- Singleton "
 author: "Bing Yan"
-header-img: "img/deadlock/post-bg-java.jpg"
+header-img: "img/dp_singleton/post-bg-java.jpg"
 header-mask: 0.2
 catalog: true
 tags:

@@ -1,9 +1,9 @@
----
+﻿---
 layout: post
 title: "Design Patterns (1)"
 subtitle: "Design patterns basic "
 author: "Bing Yan"
-header-img: "img/deadlock/post-bg-java.jpg"
+header-img: "img/design/post-bg-java.jpg"
 header-mask: 0.2
 catalog: true
 tags:
