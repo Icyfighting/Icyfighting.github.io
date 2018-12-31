@@ -1,4 +1,3 @@
-# Bing Yan Blog
 The Blog theme is forked from [Hux Github](https://github.com/Huxpro/huxpro.github.io)
 
 ## License
