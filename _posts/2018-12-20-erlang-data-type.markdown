@@ -111,7 +111,7 @@ Erlang does not have a string data type. Instead, strings can be represented by 
 
 **Example**
 
-Using "|", we can realize how to find the length of a list. <br/>
+We can realize how to find the length of a list. <br/>
 
 ```
 -module(tut4).
