@@ -53,17 +53,13 @@ convert(N, centimeter) ->
 
 **Test**
 
-<br/>
-
 ![](/img/erlang-3/atom-1.png)
 
 <br/>
 Let us see what happens if something other than centimeter or inch is entered in the convert function:<br/>
 
-<br/>
 
 ![](/img/erlang-3/atom-2.png)
-
 <br/>
 The two parts of the convert function are called its clauses. <br/>
 As shown, meter is not part of either of the clauses. The Erlang system cannot match either of the clauses so an error message function_clause is returned. 
@@ -83,8 +79,6 @@ convert_length({inch, Y}) ->
 ```
 
 **Test**
-
-<br/>
 
 ![](/img/erlang-3/tuple-1.png)
 
@@ -131,8 +125,6 @@ list_length([First | Rest]) ->
 
 **Test**
 
-<br/>
-
 ![](/img/erlang-3/list-1.png)
 
 <br/>
@@ -156,11 +148,7 @@ score(Java, Python, Erlang) when ?is_score(Java), ?is_score(Python), ?is_score(E
 
 **Test**
 
-<br/>
-
 ![](/img/erlang-3/map-1.png)
-
-<br/>
 
 **Example-2**
 
@@ -207,7 +195,9 @@ blue(#{blue := SV, alpha := SA}, #{blue := DV, alpha := DA}) ->
     SV*SA + DV*DA*(1.0 - SA).
 ```
 
+**Test**
 
+![](/img/erlang-3/map-2.png)
 
 ### Data Type Decide Method
 
