@@ -28,7 +28,7 @@ tags:
 ![](/img/erlang-2/download-1.png)
 
 2. Install Erlang by running .exe file -> select components -> Next -> Installation Complete.<br/>
-During installation, there is prompt about Microsoft Visual C++£¬Redistributable package, I selected 'Repair'.<br/>
+During installation, there is prompt about Microsoft Visual C++Â£Â¬Redistributable package, I selected 'Repair'.<br/>
 <br/>
 
 ![](/img/erlang-2/env-1.png)
