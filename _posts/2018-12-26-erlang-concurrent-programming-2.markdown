@@ -222,18 +222,21 @@ Four Erlang nodes are started up: messenger@Icy, c1@Icy, c2@Icy, c3@Icy. <br/>
 **Learning notes:as my understanding, this situation as method overload in Java. But I am not sure if Erlang have overload concept?
 But anyway, in earlier Erlang practice examples, different match conditions in the same function name and same number arguments are in different clause of same function.**
 
-*   
+*   Notice how to write the server function so that it calls itself, through server(User_List), and thus creates a loop. The Erlang compiler is "clever" and optimizes the code so that this really is a sort of loop and not a proper function call. But this only works if there is no code after the call. Otherwise, the compiler expects the call to return and make a proper function call. This would result in the process getting bigger and bigger for every loop.
+**Learning notes: the server function call itself, and this should be a recursive call. If it's a recursive call, that means this function has to have a boundary conditions. Without boundary conditions, the recursive call will cause memory problem. But in this function, there is no other code after recursive call, and Erlang compiler can know it's a loop, not proper function call. It's good, but question is besides this way to realize loop, is there more 'official' way for loop?**
 
+*   lists Module: in example, some functions of module list are used. Such as lists:keymember(Key,Position,Lists), lists:keydelete, lists:keysearch. Know the arguments and return type can help decide write the matching condition of clause.
 
+*   exit/1: An Erlang process (conceptually) runs until it does a receive and there is no message which it wants to receive in the message queue. "conceptually" is used here because the Erlang system shares the CPU time between the active processes in the system.<br/>A process terminates when there is nothing more for it to do, that is, the last function it calls simply returns and does not call another function. Another way for a process to terminate is for it to call exit/1. The argument to exit/1 has a special meaning, which is discussed later. In this example, exit(normal) is done, which has the same effect as a process running out of functions to call.
 
+*   whereis/1: The BIF whereis(RegisteredName) checks if a registered process of name RegisteredName exists. If it exists, the pid of that process is returned. If it does not exist, the atom undefined is returned.
 
-
-<br/>
 
 
 ## Summary
 
-&ensp;&ensp;&ensp;&ensp; This study is mainly to learn the basics of distributed programming in Erlang. There are some questions in the study, which are solved by testing and finding information. But I still need to continue practicing to understand the mechanism of concurrency and distribution.
+&ensp;&ensp;&ensp;&ensp; This study is mainly to read and practise this larger example. <br/>
+&ensp;&ensp;&ensp;&ensp; During reading this example, I start to have more feelings about the  
 
 
 ## Reference
