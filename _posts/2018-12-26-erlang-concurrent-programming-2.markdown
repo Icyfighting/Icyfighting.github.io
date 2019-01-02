@@ -134,7 +134,6 @@ So that means, the reason function start_ping/1 need argument Pong_Node, because
 
 &ensp;&ensp;&ensp;&ensp; This study is mainly to learn the basics of distributed programming in Erlang. There are some questions in the study, which are solved by testing and finding information. But I still need to continue practicing to understand the mechanism of concurrency and distribution.
 
-
 ## Reference
 http://www.erlang.org <br/>
 http://erlang.org/doc/getting_started/conc_prog.html <br/>
