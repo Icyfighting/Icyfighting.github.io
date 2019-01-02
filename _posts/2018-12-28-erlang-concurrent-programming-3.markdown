@@ -232,7 +232,6 @@ But anyway, in earlier Erlang practice examples, different match conditions in t
 *   whereis/1: The BIF whereis(RegisteredName) checks if a registered process of name RegisteredName exists. If it exists, the pid of that process is returned. If it does not exist, the atom undefined is returned.
 
 
-
 ## Summary
 
 &ensp;&ensp;&ensp;&ensp; This study is mainly to read and practise this larger example. <br/>
