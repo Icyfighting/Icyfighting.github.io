@@ -195,105 +195,27 @@ await_result() ->
             io:format("~p~n", [What])
     end.
 ```
-Using this program, nodes are started on four different Erlang nodes. 
-Four Erlang nodes are started up: messenger@Icy, c1@Icy, c2@Icy, c3@Icy.
+Using this program, nodes are started on four different Erlang nodes.  
+Four Erlang nodes are started up: messenger@Icy, c1@Icy, c2@Icy, c3@Icy. <br/>
+
+**Test steps:**
+
+1. First the server at messenger@Icy is started up:
+2. Peter logs on at c1@Icy; James logs on at c2@Icy; Fred logs on at c3@Icy:
+3. Peter sends Fred a message; Fred receives the message and sends a message to Peter and logs off.
+4. James now tries to send a message to Fred, But this fails as Fred has already logged off.
+
+**Test results:**
+
+![](/img/erlang-7/messenger.png)
+
+![](/img/erlang-7/c1.png)
+
+![](/img/erlang-7/c2.png)
+
+![](/img/erlang-7/c3.png)
 
 
-
-
-**Modify Ping-Pong Example:**
-
-Using process name register, the code is more fresh and cool.<br/>
-ping/2 now becomes ping/1 as the argument Pong_PID is not needed.
-```
--module(tut11).
--export([start/0, ping/1, pong/0]).
-
-ping(0) ->
-    pong ! finished,
-    io:format("ping finished~n", []);
-
-ping(N) ->
-    pong ! {ping, self()},
-    receive
-        pong ->
-            io:format("Ping received pong~n", [])
-    end,
-    ping(N - 1).
-
-pong() ->
-    receive
-        finished ->
-            io:format("Pong finished~n", []);
-        {ping, Ping_PID} ->
-            io:format("Pong received ping~n", []),
-            Ping_PID ! pong,
-            pong()
-    end.
-
-start() ->
-    register(pong, spawn(tut11, pong, [])),
-    spawn(tut11, ping, [3]).
-```
-Test: <br/>
-
-![](/img/erlang-6/example-1.png)
-
-
-### Distributed Programming
-
-I want to experiment with distributed Erlang, but I only have one computer to work on, so I start two separate Erlang systems on the same computer but give them different names. Each Erlang system running on a computer is called an Erlang node.<br/>
-
-```
-$ erl -sname my_name
-```
-
-**Modify Ping-Pong Example:**
-
-```
--module(tut13).
-
--export([start_ping/1, start_pong/0,  ping/2, pong/0]).
-
-ping(0, Pong_Node) ->
-    {pong, Pong_Node} ! finished,
-    io:format("ping finished~n", []);
-
-ping(N, Pong_Node) ->
-	io:format("Pong_Node: ~w~n", [Pong_Node]),
-	io:format("ping_self(): ~w~n", [self()]),
-    {pong, Pong_Node} ! {ping, self()},
-    receive
-        pong ->
-            io:format("Ping received pong~n", [])
-    end,
-    ping(N - 1, Pong_Node).
-
-pong() ->
-    receive
-        finished ->
-            io:format("Pong finished~n", []);
-        {ping, Ping_PID} ->
-            io:format("Pong received ping~n", []),
-            Ping_PID ! pong,
-            pong()
-    end.
-
-start_pong() ->
-    register(pong, spawn(tut13, pong, [])).
-
-start_ping(Pong_Node) ->
-    spawn(tut13, ping, [3, Pong_Node]).
-
-```
-
-Test: <br/>
-
-![](/img/erlang-6/pong-2.png)
-
-![](/img/erlang-6/ping-2.png)
-
-<br/>
 
 **Learning notes: From result, I understand there are 2 Erlang system:"ping" and "pong" on same Node "Icy". Process ping on Erlang system ping@Icy can find process pong on Erlang system pong@Icy by argument Pong_Node. <br/>
 But how process pong find process ping on different Erlang system just by Ping_PID <0.83.0>? <br/>
