@@ -236,7 +236,7 @@ But anyway, in earlier Erlang practice examples, different match conditions in t
 ## Summary
 
 &ensp;&ensp;&ensp;&ensp; This study is mainly to read and practise this larger example. <br/>
-&ensp;&ensp;&ensp;&ensp; During reading this example, I start to have more feelings about the  
+&ensp;&ensp;&ensp;&ensp; During reading this example, I start to have more feelings about the Erlang introduction: 'The application runtime written by Erlang usually consists of thousands of lightweight processes and communicates with each other through messaging.'
 
 
 ## Reference
