@@ -12,6 +12,7 @@ tags:
   - Learning
 ---
 
+
 ## Preface
 
 &ensp;&ensp;&ensp;&ensp;Last time I have learned process and how to communicate between process - passing messages in Erlang concurrent programming.And practise a simple ping-pong example to achieve the sending and receiving of messages between two processes.<br/>

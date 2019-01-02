@@ -12,6 +12,7 @@ tags:
   - Learning
 ---
 
+
 ## Preface
 
 &ensp;&ensp;&ensp;&ensp;Through the last two learning Blog of Erlang concurrent programming, I master the basic ideas and principles of concurrent programming. <br/>
