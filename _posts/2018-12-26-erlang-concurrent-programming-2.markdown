@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Erlang learning (7) - Concurrent Programming (3)"
-subtitle: "Message Passing system Example"
+subtitle: "Message Passing System Example"
 author: "Bing Yan"
 header-img: "img/erlang-7/post-bg-java.jpg"
 header-mask: 0.2
@@ -14,8 +14,8 @@ tags:
 
 ## Preface
 
-&ensp;&ensp;&ensp;&ensp;Last time I have learned process and how to communicate between process - passing messages in Erlang concurrent programming.And practise a simple ping-pong example to achieve the sending and receiving of messages between two processes.<br/>
-&ensp;&ensp;&ensp;&ensp;The purpose of this study is to see what other knowledge points in Erlang concurrent programming can achieve more abundant functions.
+&ensp;&ensp;&ensp;&ensp;Through the last two learning Blog of Erlang concurrent programming, I master the basic ideas and principles of concurrent programming. <br/>
+&ensp;&ensp;&ensp;&ensp;This time learning, by reading and analyzing an example - Message Passing System, I want to expand and consolidate the knowledge of concurrent programming.
 
 ## Text
 
