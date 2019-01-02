@@ -216,11 +216,17 @@ Four Erlang nodes are started up: messenger@Icy, c1@Icy, c2@Icy, c3@Icy. <br/>
 ![](/img/erlang-7/c3.png)
 
 
+**Knowledge points:**
 
-**Learning notes: From result, I understand there are 2 Erlang system:"ping" and "pong" on same Node "Icy". Process ping on Erlang system ping@Icy can find process pong on Erlang system pong@Icy by argument Pong_Node. <br/>
-But how process pong find process ping on different Erlang system just by Ping_PID <0.83.0>? <br/>
-There is one explanation as this: Erlang pids contain information about where the process executes. So if you know the pid of a process, the "!" operator can be used to send it a message disregarding if the process is on the same node or on a different node. <br/>
-So that means, the reason function start_ping/1 need argument Pong_Node, because process pong register name as pong, name pong does not include all information as pid itself?**
+*   There are two versions of the server_transfer function: one with four arguments (server_transfer/4) and one with five (server_transfer/5). These are regarded by Erlang as two separate functions. <br/>
+**Learning notes:as my understanding, this situation as method overload in Java. But I am not sure if Erlang have overload concept?
+But anyway, in earlier Erlang practice examples, different match conditions in the same function name and same number arguments are in different clause of same function.**
+
+*   
+
+
+
+
 
 <br/>
 
