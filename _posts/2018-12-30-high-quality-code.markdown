@@ -35,7 +35,7 @@ There are 5 aspects: <br/>
 *   Dependency analysis
 *   Complexity analysis
 
-Let¡¯s look at these aspects one by one: <br/>
+LetÂ¡Â¯s look at these aspects one by one: <br/>
 
 *   Coding specification
 >In general, companies have a coding specification that stipulates class naming, package naming, code style and so on. The quality of this specification, and level that code compliance with specification, are both included.
@@ -117,4 +117,3 @@ On the other hand, some well-known projects in open source projects are often wr
 &ensp;&ensp;&ensp;&ensp;After learning the theoretical knowledge of writing high quality code, it is important to cultivate and follow it in the daily coding work.<br/>
 &ensp;&ensp;&ensp;&ensp;In the process of collecting data, I also find some more advanced and sophisticated ways. But I can't get away from reality, what I need to do now is to write the code well.<br/>
 &ensp;&ensp;&ensp;&ensp; When I have more programming experience, I will continue to learn this knowledge.
-
