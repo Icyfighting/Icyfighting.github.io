@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Erlang learning (6) - Concurrent Programming (2)"
-subtitle: "Register Process & Distributed Programming"
+title: "Erlang learning (7) - Concurrent Programming (3)"
+subtitle: "Message Passing system Example"
 author: "Bing Yan"
-header-img: "img/erlang-6/post-bg-java.jpg"
+header-img: "img/erlang-7/post-bg-java.jpg"
 header-mask: 0.2
 catalog: true
 tags:
