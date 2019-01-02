@@ -23,6 +23,10 @@ tags:
 
 **Compile and Use:**
 
+To use this program:
+*   Configure the server_node() function with Erlang system of server, I use messenger@Icy.
+*   Copy the compiled code (messenger.beam) to the directory on each computer where you start Erlang.
+
 ```
 %%% Message passing utility.  
 %%% User interface:
@@ -191,6 +195,10 @@ await_result() ->
             io:format("~p~n", [What])
     end.
 ```
+Using this program, nodes are started on four different Erlang nodes. 
+Four Erlang nodes are started up: messenger@Icy, c1@Icy, c2@Icy, c3@Icy.
+
+
 
 
 **Modify Ping-Pong Example:**
